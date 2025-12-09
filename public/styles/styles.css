@@ -1,0 +1,889 @@
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: white;
+    background-color: #002066;
+    width: 100%;
+    /* Prevent horizontal scroll caused by animated elements going off-screen */
+    overflow-x: hidden;
+    /* Changed from 100vw to 100% for better mobile compatibility */
+}
+
+/* Example CSS for a white line fading into a dark blue background */
+hr {
+    border: none;
+    /* Remove default border */
+    height: 7px;
+    /* Set the line thickness */
+    /* Gradient: fades from transparent to white and back to transparent */
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0),
+            /* Transparent */
+            rgba(255, 255, 255, 0.75),
+            /* White */
+            rgba(255, 255, 255, 0)
+            /* Transparent */
+        );
+    width: 90%;
+    /* Make it shorter than the full width */
+    margin: 30px auto;
+    /* Centers the line and adds vertical space */
+}
+
+.spacer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+}
+
+
+/*** Header ***/
+header {
+    width: 100%;
+    /* Changed from 99vw to 100% */
+    height: 100vh;
+    position: relative;
+    background: url("images/esports_room.jpg") center center / cover no-repeat;
+    /* Prevent horizontal scroll from absolutely/relatively positioned animated children */
+    overflow-x: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* UPDATED: Changed 0.35 to 0.20 for a lighter/slighter shade */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+
+/*** Navbar ***/
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1% 15%;
+    /* Desktop Padding */
+    z-index: 50;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    list-style: none;
+    padding: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #04349a;
+}
+
+/*** Hero Section ***/
+.hero {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero .overlay {
+    /* Overlay is no longer needed here, handled by header::before */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    top: 20%;
+    left: 10%;
+}
+
+
+.hero-text h1 {
+    font-size: 4rem;
+    letter-spacing: 1px;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* Opening Section Logos */
+.usf_logo {
+    width: 25%;
+}
+
+.rl_logo {
+    width: 40%;
+}
+
+.hero-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    /* Updated for better responsiveness: removed absolute position and added margin auto */
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    top: 17%;
+    z-index: 2;
+}
+
+.hero-logos h2 {
+    /* Adjusted to work with flexbox/relative positioning */
+    font-size: 4rem;
+    margin: 0 1rem;
+}
+
+
+/* Opener Section */
+.opener {
+    margin-top: 3%;
+}
+
+/* Opening pt 1 */
+.opener-pt1-bg {
+    background-color: rgb(255, 255, 255);
+    background-position: left center;
+    width: 85%;
+    padding-bottom: 25px;
+}
+
+.opener-pt1 {
+    width: 85vw;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.opener-pt1 h1 {
+    font-size: 3rem;
+    color: #002066;
+    padding: 3%;
+}
+
+.Vid-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Vid {
+    width: 75%;
+    height: auto;
+}
+
+/* Opening pt 2 - Ball Animation */
+.rl_ball {
+    width: 120px;
+    animation: ballMove 12s linear infinite;
+    position: relative;
+}
+
+@keyframes ballMove {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    20% {
+        transform: translateX(100vw) rotate(720deg);
+    }
+
+    35% {
+        transform: translateX(100vw) rotate(720deg);
+    }
+
+    60% {
+        transform: translateX(-100vw) rotate(-720deg);
+    }
+
+    100% {
+        transform: translateX(-100vw) rotate(-720deg);
+    }
+}
+
+.opener-pt2 h2,
+.opener-pt2 img {
+    font-size: 2.75rem;
+    margin: 2%;
+}
+
+.opener-pt2-bg {
+    background-color: white;
+    color: #002066;
+    width: 80%;
+    margin-left: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.opener-pt2-bg p {
+    font-size: 1.25rem;
+}
+
+/* USF ROCKET LEAGUE SECTION */
+.usf-rl-bg {
+    width: 100vw;
+    text-align: center;
+}
+
+.usf-rl-info {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 1.25rem;
+}
+
+.usf-rl-info h1 {
+    font-size: 2.55rem;
+}
+
+.usf-rl-info-bg {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background-color: white;
+    color: #002066;
+    font-size: 1.25rem;
+    padding: 3rem;
+}
+
+
+/*RL Car Animation*/
+.rl-car {
+    margin-top: 1%;
+    width: 15%;
+    animation: carDrive 8s infinite ease-in-out;
+    transform-origin: center;
+    position: relative;
+    /* keep it in normal flow */
+}
+
+@keyframes carDrive {
+    0% {
+        transform: translateX(-300px) rotateY(0deg);
+    }
+
+    40% {
+        transform: translateX(calc(100vw + 300px)) rotateY(0deg);
+    }
+
+    45% {
+        transform: translateX(calc(100vw + 300px)) rotateY(180deg);
+    }
+
+    85% {
+        transform: translateX(-300px) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateX(-300px) rotateY(180deg);
+    }
+}
+
+/* USF RL BENEFITS */
+.usf-rl-benefits {
+    /* **NEW: Make this the Flex container for side-by-side layout** */
+    display: flex;
+    /* Aligns items vertically in the center */
+    align-items: center;
+    /* Space between the list and the image */
+    gap: 2rem;
+
+    /* Keep these properties to position the entire block: */
+    width: 80%;
+    /* INCREASE width to accommodate both the list and the image */
+    margin-left: 10%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+}
+
+/* New CSS for the text wrapper */
+.benefits-text {
+    /* Allocate space for the list */
+    width: 40%;
+    /* Make the text content shrinkable if needed */
+    flex-shrink: 0;
+}
+
+.benefits-text h2 {
+    font-size: 2.65rem;
+}
+
+.usf-rl-benefits ul {
+    /* Keep existing padding */
+    padding-left: 15%;
+    border: 4px solid white;
+    padding: 7%;
+}
+
+.usf-wall {
+    /* Allocate space for the image */
+    width: 40%;
+    /* Allow the image to grow a bit if needed */
+    flex-grow: 1;
+    /* Ensure the image doesn't get too tall */
+    height: auto;
+    border-radius: 8px;
+    /* Optional: smooth corners */
+}
+
+/* Roster Section */
+.roster-cards {
+    display: flex;
+    flex-direction: row;
+    /* ensures row layout */
+    justify-content: center;
+    /* centers the row */
+    align-items: flex-start;
+    /* aligns cards at top */
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* allows wrapping on smaller screens */
+    margin-bottom: 5%;
+}
+
+.roster-section h1 {
+    text-align: center;
+    margin: 7% 0 5% 0;
+    padding: 3% 0;
+    background-color: white;
+    color: #002066;
+    font-size: 2.5rem;
+
+}
+
+.player-img {
+    width: 100%;
+    border: 4px solid white;
+}
+
+/* Schedule */
+.schedule-bg {
+    background-color: white;
+    color: #002066;
+    text-align: center;
+    /*width: 85vw;*/
+}
+
+.schedule {
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.game {
+    border: 3px solid #002066;
+    width: 50vw;
+    border-radius: 50px;
+    margin: 1% auto;
+    background-color: #002066;
+    color: white;
+    font-size: 1.15rem;
+}
+
+.game-info p {
+    padding: 1%;
+}
+
+.win {
+    color: green;
+}
+
+.loss {
+    color: red;
+}
+
+/* Scheudle Cahgner Ma Jig */
+.schedule-btn {
+    background-color: #000;
+    padding: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    gap: 10px;
+    size: 3rem
+}
+
+.schedule-btn button {
+    width: 125px;
+    height: 75px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+/* Inqure form! */
+#join h1 {
+    text-align: center;
+    padding-top: 3%;
+}
+
+#inquire {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-top: 2rem;
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+#inquire fieldset {
+    width: 70%;
+    /* responsive width */
+    max-width: 30rem;
+    /* safe limit but still rem-based */
+    padding: 2rem;
+    border-radius: 1rem;
+    /*background-color: #04349aae;*/
+}
+
+#inquire label,
+#inquire input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#inquire input {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #ccc;
+}
+
+#inquire button {
+    background-color: white;
+    color: #002066;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    border: 4px solid black;
+    display: block;
+    margin: 1rem auto;
+
+}
+
+
+/* Inqurie Page pt 2. */
+.inquire-join {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10%;
+}
+
+/* MINI TOUR SECTION */
+.tour-img {
+    width: 50%;
+    border: 5px solid white;
+}
+
+
+/* Footer...!!! */
+.footer {
+    background-color: #000000;
+    text-align: center;
+    height: 5rem;
+}
+
+.footer h4 {}
+
+
+
+
+/*======= Accessibity Settings ==========*/
+#settings {
+    padding: 10% 5%;
+    text-align: center;
+
+}
+
+/*============ RL History ==============*/
+.rl-history {
+    background-color: white;
+    color: #002066;
+    padding: 4% 12%;
+    margin: 1% 9%;
+    margin-top: 7%;
+    border-radius: 40px;
+    line-height: 25px;
+    font-size: 1.2rem;
+}
+
+.rl-history h1 {
+    text-align: center;
+    padding: 0 0 3% 0;
+    font-size: 2.25rem;
+}
+
+.rl-history h2 {
+    padding: 2% 0;
+}
+
+.rl-history p {}
+
+
+/*========================*/
+/** SHOP **/
+/*========================*/
+
+#shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10%;
+
+    text-align: center;
+
+    background-color: #FFFFFF;
+    color: #002066;
+}
+
+.shop-header {
+    padding: 5%;
+    font-size: 1.35rem;
+}
+
+
+.shop-cards {}
+
+.shop-container {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    /* ensures row layout */
+    justify-content: center;
+    /* centers the row */
+    align-items: flex-start;
+    /* aligns cards at top */
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* allows wrapping on smaller screens */
+    margin-bottom: 5%;
+
+
+}
+
+.item-img {
+    width: 225px;
+    height: 250px;
+    border: 3px solid #002066;
+    /* same border as card */
+    border-radius: 15px;
+}
+
+.item-price {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.card {
+    border: 6px solid #002066;
+    /* dark blue border */
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* subtle shadow for pop-out effect */
+    background-color: #f9f9f9;
+    /* slightly off-white so it contrasts with the page */
+    margin-bottom: 2rem;
+    width: 35%;
+}
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card td {
+    vertical-align: top;
+    /* aligns text to top of image */
+    padding: 0.5rem;
+}
+
+/*============
+=== LOG IN FORM
+=============*/
+.login h1 {
+    text-align: center;
+    padding-top: 3%;
+}
+
+#registerForm {
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    margin-top: 2rem;
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+#registerForm fieldset {
+    width: 70%;
+    /* responsive width */
+    max-width: 30rem;
+    /* safe limit but still rem-based */
+    padding: 2rem;
+    border-radius: 1rem;
+    /*background-color: #04349aae;*/
+}
+
+#registerForm label,
+#registerForm input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#registerForm input {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #ccc;
+}
+
+#registerForm button {
+    background-color: white;
+    color: #002066;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    border: 4px solid black;
+    display: block;
+    margin: 1rem auto;
+
+}
+
+
+
+
+/* ======================================= */
+/* R E S P O N S I V E   D E S I G N */
+/* ======================================= */
+
+/* phones (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* --- Navbar & Header --- */
+    .navbar {
+        padding: 5% 5%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* --- Hero Logos --- */
+    .hero-logos {
+        width: 95%;
+        padding: 0 2%;
+        top: 5%;
+    }
+
+    .usf_logo,
+    .rl_logo {
+        width: 35%;
+    }
+
+    .hero-logos h2 {
+        font-size: 2rem;
+    }
+
+    /* --- Hero Text --- */
+    .hero-text {
+        top: 25%;
+        left: 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.25rem;
+    }
+
+    /* --- Opener Section --- */
+    .opener-pt1-bg {
+        width: 100%;
+    }
+
+    .opener-pt1 h1 {
+        font-size: 2rem;
+        padding: 5%;
+    }
+
+    .Vid-Container {
+        padding: 0 5%;
+    }
+
+    .Vid {
+        width: 100%;
+    }
+
+    .opener-pt2-bg {
+        width: 100%;
+        padding: 1.5rem;
+        /* Align content to the left side when full width on mobile */
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .opener-pt2 h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Stack the cards vertically */
+    .roster-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shop-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-card {
+        width: 90%;
+    }
+
+    /* Esports benefits + wall image stack */
+    .usf-rl-benefits {
+        flex-direction: column;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits-text,
+    .usf-wall {
+        width: 100%;
+    }
+
+    .shop-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .item-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    /* --- Navbar --- */
+    .navbar {
+        padding: 1% 5%;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* --- Hero Logos --- */
+    .usf_logo {
+        width: 30%;
+    }
+
+    .rl_logo {
+        width: 45%;
+    }
+
+    .hero-logos h2 {
+        font-size: 3rem;
+    }
+
+    /* --- Hero Text --- */
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.75rem;
+    }
+
+    /* --- Opener Section --- */
+    .opener-pt2-bg {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .player-card {
+        width: 40%;
+    }
+
+
+    .card {
+        width: 45%;
+    }
+
+    .item-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* laptops (max-width: 1280px) */
+@media (max-width: 1280px) {
+    .navbar {
+        padding: 1% 10%;
+    }
+
+    .hero-text {
+        left: 8%;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .card {
+        width: 40%;
+    }
+}

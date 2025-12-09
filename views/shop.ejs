@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>USF RL Shop</title>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="RL-History.html">About</a></li>
+            <li><a href="roster.html">Roster & Schedule</a></li>
+            <li><a href="esports.html">Join</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="access.html">Accessibily Settings</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="shop">
+            <div class="shop-header">
+                <h1>Welcome to the USF Shop!</h1>
+                <% if (user) { %>
+                    <h2>Welcome back, <%= user.name %>!</h2>
+                    <% } else { %>
+                        <p>Please look around and see what you like. Support the team!</p>
+                        <p>Sign Up <a href="register.html">here</a> to shop today!</p>
+                        <% } %>
+            </div>
+
+
+            <div class="shop-container">
+                <div class="card">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/images/RL-car.png" alt="Item 1" class="item-img">
+                            </td>
+                            <td>
+                                <h3>Rocket League Mini-Car</h3>
+                                <p>This is the best thing you will buy here.</p>
+                                <h4 class="item-price">$46.99</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/images/ball.png" alt="Item 3" class="item-img">
+                            </td>
+                            <td>
+                                <h3>Rocket League Ball</h3>
+                                <p>Bouncing ball based on in-game Rocket League ball</p>
+                                <h4 class="item-price">$6.70</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/images/box-drop.jpg" alt="Item 4" class="item-img">
+                            </td>
+                            <td>
+                                <h3>Rocket League Random Car Box</h3>
+                                <p>Random loot box containing the chance to get up to 12 different Rocket League based
+                                    cars</p>
+                                <h4 class="item-price">$15.00</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="card">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/images/crown.jpg" alt="Crown w/ 'vip' on it" class="item-img">
+                            </td>
+                            <td>
+                                <h3>No Steaming Ads</h3>
+                                <p>Give the USF RL team all your attention by not letting ads interupt the match! There
+                                    will also be exclusive chat emojis and username customization in chat, such as fancy
+                                    name color in chat, logo next to username, and ability to spam chat with "W"'s</p>
+                                <h4 class="item-price">$15.00</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <button id="logoutBtn" style="width: 100px; height: 100px;">Log Out</button>
+    </footer>
+
+    <script>
+        document.getElementById("logoutBtn").addEventListener("click", async () => {
+            const res = await fetch("/api/logout", { method: "POST" });
+            const data = await res.json();
+            if (data.status === "ok") window.location.href = "/login.html";
+        });
+    </script>
+
+
+</body>
+
+</html>

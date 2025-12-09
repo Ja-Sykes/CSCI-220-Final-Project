@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <title>Log in</title>
+</head>
+
+<body>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="RL-History.html">About</a></li>
+        <li><a href="roster.html">Roster & Schedule</a></li>
+        <li><a href="esports.html">Join</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="access.html">Accessibily Settings</a></li>
+    </ul>
+
+
+    <!-- Log in form -->
+    <section class="login" id="login">
+        <h1>Sign Back in!</h1>
+
+        <form id="loginForm">
+            <fieldset>
+                <legend>Log In!</legend>
+
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" name="email" placeholder="email" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" placeholder="password" required>
+
+                <button type="submit" class="submit">Sign In</button>
+
+                <p>Don't have an account? <a href="/register.html">Sign Up</a></p>
+
+            </fieldset>
+        </form>
+
+    </section>
+
+
+    <script src="/scripts/index.js"></script>
+</body>
+
+</html>

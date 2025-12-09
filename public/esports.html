@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Esports Room</title>
+</head>
+
+<body>
+    <!-- Little Tour of the Esports room and other games we offer.-->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="RL-History.html">About</a></li>
+            <li><a href="roster.html">Roster & Schedule</a></li>
+            <li><a href="esports.html">Join</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="access.html">Accessibily Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="inquire-join">
+            <h1>Join our team!</h1>
+            <h3>College Students - USF is always looking for more people to add to the roster! Here's a mini tour of our
+                facility.
+            </h3>
+
+            <img src="images/esports_room.jpg" alt="Broad view of USF Esports Room" class="tour-img">
+            <!-- Kind of just thinkig of taking a picture slide show which has some detailed notes and descriptions. -->
+            <h2>24/7 Swipe Access</h2>
+            <p>Saint Francis offers each student on the Esprots team 24/7 access to the facility - letting the student
+                practice no matter the time of day!</p>
+            <img src="" alt="Esports Door">
+
+            <h2>Full Facility of Computers</h2>
+            <img src="" alt="Esports Room">
+            <p>With 20 computers to choose from, a computer will always be open! With there being a small number of
+                students on the general Esports team [Not Rocket League Team Alone], computers are always free due to
+                different esports teams practicing at different times. It is up to your teams' general class schedule to
+                find an open slot for everyone practice. Rocket League usually practices twice a week for an hour. Very
+                often the team will get together outside of scheduled practice time to continue practicing - either solo
+                or as a team!</p>
+
+            <!-- For Peripherals I'm thinking of just doing a list and showing an image, idrk how though. -->
+            <h2>High End Gaming Peripherals</h2>
+            <h5>Computer Specs: GTX 2070 & Intel Core I5</h5>
+            <p>Computers are powerful enough to run rocket league at 120 FPS steady</p>
+
+
+            <h5>Legion Keyboard and Mouse</h5>
+            <p>Low Latency for keyboard and mouse players giving a smooth edge of opponents!</p>
+
+
+
+        </div>
+
+        <hr class="spacer">
+
+        <section class="join" id="join">
+            <h1>Join Today!</h1>
+
+            <form action="something.php" method="POST" id="inquire">
+                <fieldset>
+                    <legend>Contact Us!</legend>
+                    <label for="name">Name</label>
+                    <input type="text" class="name" id="name" placeholder="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" class="email" name="email" placeholder="email" required>
+
+                    <label for="message">Message</label>
+                    <input type="text" class="message" id="message" placeholder="message" required>
+
+                    <button type="submit" class="submit" id="submit">Send</button>
+
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+
+    <script src="/scripts/index.js"></script>
+    <script src="server.js"></script>
+</body>
+
+</html>

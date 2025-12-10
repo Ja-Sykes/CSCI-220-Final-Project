@@ -707,13 +707,16 @@ header::before {
         gap: 0.5rem;
         font-size: 1rem;
         text-align: center;
+
+        background-color: #000;
+        display: block;
     }
 
     /* --- Hero Logos --- */
     .hero-logos {
         width: 95%;
         padding: 0 2%;
-        top: 5%;
+        top: 30%;
     }
 
     .usf_logo,
@@ -809,6 +812,28 @@ header::before {
     .item-img {
         width: 100%;
         height: auto;
+
+    }
+
+
+    /* Adjusting for mobile view points for the nav bar*/
+    .rl-history {
+        margin-top: 35%;
+        margin-bottom: 10%;
+    }
+
+    #roster {
+        margin-top: 35%;
+    }
+
+    .inquire-join {
+        margin-top: 30%;
+        text-align: center;
+    }
+
+    #shop {
+        margin-top: 40%;
+        text-align: center;
     }
 }
 
